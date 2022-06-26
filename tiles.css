@@ -1,0 +1,183 @@
+Vadym Dziuba, [26.06.2022 16:49]
+Vadym Dziuba, [26.06.2022 16:49]
+@property --rotate {
+syntax: "<angle>";
+    intial-value: 132deg;
+    inherits: false;
+}
+
+:root{
+    --card-height: 65vh;
+    --card--width: var(--card-height);
+}
+
+body{
+    background: #8389ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.card {
+    background: #191c29;
+    width: var(--card--width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+canvas {
+    position: absolute;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+Vadym Dziuba, [26.06.2022 17:17]
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+:root{
+    --card-height: 65vh;
+    --card--width: var(--card-height);
+}
+
+body{
+    background: #8389ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.card {
+    background: #191c29;
+    width: var(--card--width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+canvas {
+    position: absolute;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+Vadym Dziuba, [26.06.2022 17:04]
+@property --rotate {
+  syntax: "<angle>";
+  intial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card--width: var(--card-height);
+}
+
+body {
+  background: #8389ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.card {
+  background: #000555;
+  width: var(--card--width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.card::before {
+  content: "";
+  width: 110%;
+  height: 110%;
+  /* background: rgb(255, 68, 68); */
+  border-radius: 8px;
+  z-index: -1;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3, #4e00c2);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after{
+    position: absolute;
+    background-color: red;
+    content: "";
+    top: calc(var(-card-height)/6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height)/6));
+    background-image: linear-gradient();
+    var(--rotate),
+    #ff805d,
+    #e33c3c,
+    #c20000,
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+canvas {
+  position: absolute;
+  border-radius: 16px;
+  cursor: pointer;
+}
